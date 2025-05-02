@@ -45,6 +45,36 @@ hello();
 
  const app=express();
 
+app.get('/' , (req,res)=>{
+   console.log(req);
+   res.send("hey, welcome to the server")
+})
+app.get('/saybye', (req,res)=>{
+   console.log(res);
+   res.send("ok bye!...")
+})
+
+app.post('/saybye', (req,res)=>{
+   console.log("post Route");
+   res.send("post Route");
+})
+
+app.post('/postUserDetails', (req,res)=>{
+   console.log(res);
+   res.send("post User Details route");
+})
+
+app.put('/updateUserDetails', (req,res)=>{
+   console.log(res);
+   res.send("Updated User Details Route");
+})
+
+app.delete('/deleteUserDetails', (req,res)=>{
+   res.send("User Route Is Deleted");
+})
+
+
+
  app.listen(3000,()=>{
     console.log("your server is running");
  })
